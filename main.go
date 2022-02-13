@@ -1,40 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/fokion/problems/leetcode"
 
 func main() {
-	firstName := "Fokion"
-
-	var lastName *string
-
-	fmt.Println(firstName)
-
-	if lastName == nil {
-		fmt.Println("Last name pointer is nil")
-		lastName = new(string)
-		*lastName = "Sotiropoulos"
-		fmt.Println("The memory location of the pointer is", lastName)
-		fmt.Println(*lastName)
-	}
-
-	pointer := &firstName
-	fmt.Println(pointer, *pointer)
-
-	firstName = "Testing"
-
-	fmt.Println(pointer, *pointer)
-
-	const NUMBER = 3
-
-	fmt.Println(NUMBER + 3)
-	fmt.Println(NUMBER + 1.2)
-
-	var age int = 32
-	fmt.Println("my age is ", age)
-
-	//doing complex numbers
-	complexNum := complex(3, 4)
-	realNum, imaginaryNum := real(complexNum), imag(complexNum)
-	fmt.Println(realNum, imaginaryNum)
-
+	leetcode.TwoSum([]int{3, 2, 4}, 6)
 }
