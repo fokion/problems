@@ -24,6 +24,11 @@ func main() {
 
 	fmt.Println(pointer, *pointer)
 
+	const NUMBER = 3
+
+	fmt.Println(NUMBER + 3)
+	fmt.Println(NUMBER + 1.2)
+
 	var age int = 32
 	fmt.Println("my age is ", age)
 
