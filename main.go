@@ -17,6 +17,13 @@ func main() {
 		fmt.Println(*lastName)
 	}
 
+	pointer := &firstName
+	fmt.Println(pointer, *pointer)
+
+	firstName = "Testing"
+
+	fmt.Println(pointer, *pointer)
+
 	var age int = 32
 	fmt.Println("my age is ", age)
 
