@@ -54,3 +54,17 @@ func TestSumOfNumbersWithSameLength(t *testing.T) {
 		t.Errorf("Expected 807 and got %d", gotNumber)
 	}
 }
+
+func TestSumOfNumbersDiffLength(t *testing.T) {
+	//list one 2,4,3
+	listOne := convertNumberToList(342)
+	//list two 1
+	listTwo := convertNumberToList(1)
+	//expected 343
+	got := AddTwoNumbers(listOne, listTwo)
+
+	gotNumber := convertToNumber(got, 0, 0)
+	if gotNumber != 343 {
+		t.Errorf("Expected 343 and got %d", gotNumber)
+	}
+}
