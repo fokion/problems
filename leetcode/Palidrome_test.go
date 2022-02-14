@@ -18,13 +18,23 @@ func TestIsPalidrome_test(t *testing.T) {
 }
 
 func TestIsPalidrome_palidrome_with_spaces_and_other_symbols(t *testing.T) {
-	if !IsPalidrome("race $123^ ecar") {
+	if !IsPalidrome("race $^ ecar") {
 		t.Errorf("raceecar is a palidrome")
 	}
 }
 
+func TestIsPalidrome(t *testing.T) {
+	if !IsPalidrome("A man, a plan, a canal: Panama") {
+		t.Errorf("A man, a plan, a canal: Panama -> amanaplanacanalpanama which is a palidrome")
+	}
+}
+func TestGetCleanText_keep_numbers(t *testing.T) {
+	if !strings.EqualFold(GetCleanText("1234 $!"), "1234") {
+		t.Errorf("1234 $! did not transform to 1234 , %s", GetCleanText("1234 $!"))
+	}
+}
 func TestGetCleanText(t *testing.T) {
-	if !strings.EqualFold(GetCleanText("race $123^ ecar"), "raceecar") {
-		t.Errorf("race $123^ ecar did not transform to raceecar")
+	if !strings.EqualFold(GetCleanText("race $^ ecar"), "raceecar") {
+		t.Errorf("race $^ ecar did not transform to raceecar")
 	}
 }

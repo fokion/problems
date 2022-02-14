@@ -16,7 +16,7 @@ func IsPalidrome(text string) bool {
 	firstHalf := text[:index]
 	secondHalf := text[index:]
 	if len(text)%2 == 1 {
-		firstHalf = text[:(index + 1)]
+		firstHalf = text[:index]
 		secondHalf = text[index+1:]
 	}
 	length := len(firstHalf)
@@ -33,6 +33,6 @@ func IsPalidrome(text string) bool {
 
 func GetCleanText(text string) string {
 
-	expr := regexp.MustCompile(`(\d+|\s+|\W)`)
+	expr := regexp.MustCompile(`(\s+|([^a-z0-9]+))`)
 	return expr.ReplaceAllString(strings.ToLower(text), "")
 }
